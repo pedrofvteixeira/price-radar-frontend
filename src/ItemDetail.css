@@ -1,0 +1,143 @@
+.item-detail-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.header-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.go-back-btn {
+    background-color: transparent;
+    border: none;
+    padding: 3; /* Adjust padding as needed */
+    cursor: pointer;
+    align-self: flex-start; /* Align to the left */
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+.go-back-btn img {
+    width: 30px;
+    height: auto;
+    transform: rotate(180deg);
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+  
+.item-name {
+    font-size: 2rem;
+    color: #008080;
+    margin: 0 10px; /* Add space around the item name */
+}
+  
+.tags {
+    display: flex; /* Use flexbox for tags */
+    gap: 10px; /* Add space between tags */
+}
+  
+.tag {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+  
+.latest-price {
+    font-size: 2rem; /* Increase font size for emphasis */
+    font-weight: bold;
+    color: #008080; /* Theme color */
+    margin: 20px 0;
+}
+  
+.price-value {
+    /* Add any specific styling for price value here */
+}
+  
+.chart-container {
+    width: 90%; /* Adjust chart width */
+    margin-top: 40px;
+    display: inline-flex;
+}
+  
+  /* Media query for responsiveness */
+@media (max-width: 768px) {
+    .chart-container {
+      width: 100%; /* Full width on smaller screens */
+    }
+  
+    .header-section {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .item-details {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .go-back-btn {
+      margin-bottom: 10px; /* Add space below on smaller screens */
+    }
+}
+
+@keyframes pulse-a {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+}
+
+@keyframes pulse-b {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+  
+.price-value-dot-a::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #fe8637;
+    border-radius: 50%;
+    margin-left: 3px;
+    animation: pulse-a 3s infinite;
+}
+
+.price-value-dot-b::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #fe8637; 
+    border-radius: 50%;
+    margin-left: 3px;
+    animation: pulse-b 3s infinite;
+}
